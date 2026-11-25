@@ -1,23 +1,23 @@
 ---
-name: makeready
-description: Use when asked to make, change, rebuild or check a print layout (an InDesign file, a flyer series, a poster, a window or wall graphic) with the makeready CLI, or when working in a project folder that holds templates/ and series/ for makeready
+name: makeready-indesign
+description: Use when asked to create, change or check an InDesign document or print layout (IDML, flyer series, poster, signage, window or wall graphic), including building one from a brief without InDesign installed, or when working in a makeready project folder
 ---
 
-# makeready
+# makeready-indesign
 
 ## Overview
 
-makeready compiles layout files into native InDesign IDML. A template places the frames, a spec fills them, and `makeready build` writes the document and checks it. Your job is to turn a brief into those files and prove the result matches the brief, from the files themselves.
+makeready compiles layout files into native InDesign IDML. A template places the frames, a spec fills them, and `makeready build` writes it. Your job is to turn a brief into those files and prove the result matches the brief, from the files themselves.
 
 File formats: `references/template.md` (templates, frames, shapes, hooks) and `references/spec.md` (series, slots, overrides, commands, project layout).
 
 ## Steps
 
-1. **Find the project.** It is the folder holding `seed/`, `mac/`, `brand/`, `templates/` and `series/`. Run every command as `makeready --repo <project> <command>`. Write only inside the project.
+1. **Install and find the project.** If `makeready --version` fails, run `uv tool install git+https://github.com/powerful-user/makeready`. If `jing` is missing, give the operator `sudo apt install jing` or `brew install jing-trang`. The project holds `seed/`, `mac/`, `brand/`, `templates/` and `series/`; if there is none, run `makeready init <new folder>`. Run every command as `makeready --repo <project> <command>`. Write only inside the project.
 
-2. **Turn the brief into numbers.** List every size, gap, count and margin the layout needs. Name each one the brief leaves out, such as the bar between two panes or a page margin. Ask about each. If nobody can answer, choose a value, say it is an assumption, and keep it in one named place so changing it is one edit.
+2. **Turn the brief into numbers.** List every size, gap, count and margin the layout needs. Name each one the brief leaves out, such as the bar between two panes or a page margin. Ask about each. If nobody can answer, choose a value, say it is an assumption, and keep it in one named place.
 
-3. **Choose scale and bleed, and say which.** An InDesign page is at most 216 in on each side. When the job is larger, build to scale: 1:4 is 18 pt per full-size inch, 1:10 is 7.2 pt. Bleed is 0.5 in at full size unless the printer says otherwise; the template's `bleed` is in document points (9 pt at 1:4).
+3. **Choose scale and bleed, and say which.** When a job passes 216 in on a side, build to scale: 1:4 is 18 pt per full-size inch, 1:10 is 7.2 pt. Bleed is 0.5 in at full size unless the printer says otherwise; the template's `bleed` is in document points (9 pt at 1:4).
 
 4. **Preview a new or changed layout before building.** Draw each page flat, as a PNG or SVG made from the same numbers, with the key dimensions labelled. Show it and wait for a yes. If nobody can look, say the preview was not confirmed and carry on.
 
