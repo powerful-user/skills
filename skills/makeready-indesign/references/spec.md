@@ -4,8 +4,8 @@
 
 ```
 <project>/
-  seed/reference.idml       InDesign reference file the build copies from (from the makeready repo)
-  mac/                      scripts the Mac render runs (from the makeready repo)
+  seed/reference.idml       InDesign reference file the build copies from (from `makeready init`)
+  mac/                      scripts the Mac render runs (from `makeready init`)
   brand/swatches.yaml       CMYK swatches, the only colours a build may use
   brand/font-map.yaml       font names to font files in the fonts folder
   brand/asset-map.yaml      Figma element ids to vector files (import only)
@@ -14,7 +14,7 @@
   build/<series>/<doc>/     builds; latest/ points at the newest
 ```
 
-The config (`~/.config/makeready/config.toml`, or the file `MAKEREADY_CONFIG` names) says where the photos and fonts folders are, which Mac renders, and the print profile and inks. Do not print or copy the Figma token it holds.
+The config (the file `MAKEREADY_CONFIG` names, else `makeready.toml` in the project, else `~/.config/makeready/config.toml`) says where the photos and fonts folders are, which Mac renders, and the print profile and inks. Do not print or copy the Figma token it holds.
 
 `brand/swatches.yaml`:
 
