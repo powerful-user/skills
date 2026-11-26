@@ -13,9 +13,9 @@ File formats: `references/template.md` (templates, frames, shapes, hooks) and `r
 
 ## Steps
 
-1. **Install and find the project.** If `makeready --version` fails, run `uv tool install git+https://github.com/powerful-user/makeready`. If `jing` is missing and `brew --version` works, run `brew install jing-trang` yourself. Otherwise give the operator `sudo apt install jing`, or on a Mac, Homebrew (brew.sh). The project holds `seed/`, `mac/`, `brand/`, `templates/` and `series/`; if there is none, run `makeready init <new folder>`. Run every command as `makeready --repo <project> <command>`. Write only inside the project.
+1. **Install and find the project.** If `uv` or `jing` is missing and `brew --version` works, run `brew install uv` or `brew install jing-trang` yourself. Otherwise give the operator Homebrew (brew.sh) on a Mac, or uv (docs.astral.sh) and `sudo apt install jing` on Linux. If `makeready --version` fails, run `uv tool install git+https://github.com/powerful-user/makeready`. The project holds `seed/`, `mac/`, `brand/`, `templates/` and `series/`; if there is none, run `makeready init <new folder>`. Run every command as `makeready --repo <project> <command>`. Write only inside the project.
 
-2. **Turn the brief into numbers.** List every size, gap, count and margin the layout needs. Name each one the brief leaves out, such as the bar between two panes or a page margin. Ask about each. If nobody can answer, choose a value, say it is an assumption, and keep it in one named place.
+2. **Turn the brief into numbers.** List every size, gap, count and margin the layout needs. Name each one the brief leaves out, such as the bar between two panes. Ask about each. If nobody can answer, choose a value, say it is an assumption, and keep it in one named place.
 
 3. **Choose scale and bleed, and say which.** When a job passes 216 in on a side, build to scale: 1:4 is 18 pt per full-size inch, 1:10 is 7.2 pt. Bleed is 0.5 in at full size unless the printer says otherwise; the template's `bleed` is in document points (9 pt at 1:4).
 
@@ -29,9 +29,9 @@ File formats: `references/template.md` (templates, frames, shapes, hooks) and `r
 
 8. **Read the build back.** `python3 <skill folder>/scripts/readback.py <project>/build/<series>/<doc>/latest/<doc>.idml --scale <scale>` lists every page, frame, outline and placed image in full-size inches. Check each size, position and gap against step 2, and say which match and which do not.
 
-9. **Render only with a Mac.** Run `makeready mac check` first. If it fails, do not render; say that no PDF was made and why. `makeready render`, `proof` and `approve` need the Mac.
+9. **Render only with a Mac.** Run `makeready mac check` first. If it fails, do not render; say that no PDF was made and why.
 
-10. **Report.** Files changed, commands run, assumptions made, findings, the read-back result, and what is left undone.
+10. **Report.** Files changed, commands run, assumptions made, findings, read-back result, and what is left undone.
 
 ## Never
 
