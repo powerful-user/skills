@@ -1,9 +1,9 @@
 ---
-name: makeready-indesign
+name: makeready
 description: Use when asked to create, change or check an InDesign document or print layout (IDML, flyer series, poster, signage, window or wall graphic), including building one from a brief without InDesign installed, or when working in a makeready project folder
 ---
 
-# makeready-indesign
+# makeready
 
 ## Overview
 
